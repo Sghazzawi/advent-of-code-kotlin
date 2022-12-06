@@ -15,7 +15,8 @@ fun main() {
         return input.map { it.toCharArray() }
             .chunked(3)
             .fold(0) { acc, current ->
-                acc + priorities.indexOf(current.reduce { ac, s -> ac.intersect(s.asIterable().toSet()).toCharArray() }.first()) + 1
+                acc + priorities.indexOf(current.reduce { ac, s -> ac.intersect(s.asIterable().toSet()).toCharArray() }
+                    .first()) + 1
             }
 
     }
